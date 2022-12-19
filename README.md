@@ -135,12 +135,71 @@ Son olarak değişkenlerimizin normal dağılımdan geldiğine emin olmadığım
 NOT: Analizlerimizin sonucunda değişkenlerimizi de belirterek rapor yazmamız ya da yorum yapmamız gerekiyorsa PCA kullanmamız doğru olmaz çünkü PCA uygularken var olan değişkenlerimizden farklı bir düzlemde birbirine dik yeni bileşenler oluşturulduğundan bu bileşenler hakkında bilgi veremeyiz. 
 
 
+## PCA	ALGORITMALARI:
+
+### PCA algoritması I (sıralı):
+Merkezlenmiş veriler göz önüne alındığında {x1, …, xm}, ana vektörleri hesaplama:
+      ![image](https://user-images.githubusercontent.com/75726215/208487474-0b0339d2-9342-4474-b35e-d4cef9067a4e.png)
+x'in izdüşümünün varyansını maksimize ediyoruz.
+      ![image](https://user-images.githubusercontent.com/75726215/208487849-050dd920-e7dc-466f-a451-84ef3795e3fe.png)
+
+   ![image](https://user-images.githubusercontent.com/75726215/208488109-8721ce98-b99d-4605-8a7b-886d010736f6.png)
+
+#### Varyansı Maksimize Etme:
+   ![image](https://user-images.githubusercontent.com/75726215/208488275-29baeea9-e6a8-437a-bdc6-b3ff2f383742.png)
+
+### PCA algoritması II (örnek kovaryans matrisi):
+Verilen veri {x1, …, xm}, kovaryans matrisı hesaplama:
+   ![image](https://user-images.githubusercontent.com/75726215/208489217-576258c9-6ae4-4c8e-ae78-91a88053a0f7.png)
+
+   ![image](https://user-images.githubusercontent.com/75726215/208489382-10c9220f-e284-4364-ad08-48f07e51a683.png)
+
+### PCA algoritması III (veri matrisinin SVD'si):
+X merkezli veri matrisinin Tekil Değer Ayrıştırması.
+  
+  ![image](https://user-images.githubusercontent.com/75726215/208490074-e2a28e9f-fc79-4bdc-802d-0337fbf05703.png)
+  
+  ![image](https://user-images.githubusercontent.com/75726215/208490154-f41fb3a1-aace-4204-ab52-d728e990e9ee.png)
+
+• U Sütunları:
+– Ana vektörler, { u(1) , …, u(k) }
+– Ortogonal ve birim norma sahip – yani UTU = I
+– Doğrusal kombinasyonlar kullanarak verileri yeniden oluşturabilir { u(1) , …, u(k) }
+
+• Matris S:
+– Çapraz
+– Her bir özvektörün önemini gösterir
+
+• VT Sütunları:
+– Örnekleri yeniden oluşturmak için katsayılar
+
+## PCA Kullanım Alanları:
+
+• GENETİK:
+Genetik çeşitliliğin coğrafi konum ve etnik kökene göre dağılımı,bir ırkın yaşadığı tarihsel demografik olaylar ve süreçler hakkında geniş bir bilgi kaynağı sağlar.Bununla birlikte kolonizasyon, izolasyon, göç ve karışım gibi süreçlerin doğası ve zamanlaması hakkında çıkarımlar yapmak çok zorlaşabilir. Temel Bileşen Analizi de genetik varyasyonun coğrafi konum ve etnik kökene dağılımındaki yapıyı belirlemek için yaygın olarak kullanılır. 
+          
+• SAĞLIK:
+Elektronik Sağlık Hizmeti kayıtları kullanan klinik araştırmalar genellikle çok sayıda değişken sunar. Bu değişkenler sıklıkla birbirleriyle ilişkilidir ve bu da  regresyon modellerinde çoklu bağlantıya neden olur. Çoklu bağlantıdan etkilenen  tahminlerin büyük standart hataları olabilir ve bu tür tahminler üzerindeki çıkarımı daha az kesin hale getirir.
+Bu tip bir sorun klinik çalışmalarda mevcuttur ve bu sorunla başa çıkmak için kullanılan yöntemlerden bir tanesi de Temel Bileşen Analizidir.   
+
+• ENERJİ:     
+Günümüzde fosil yakıtlar nedeniyle   artan küresel ısınma sorununa karşılık güneş enerjisi benzeri yenilenebilir enerjilere  yönelim artmaktadır. Ancak güneş enerjisi sistemlerinin sorunsuz  ve de sürekli çalışabilmesi için güneş ışınımının yoğunluğu ile ilgili birkaç dakika önceden bilgi alınmalıdır. Bunun için çeşitli modeller olsa da bu modeller çoğunlukla yüksek hesaplama süresi gerektirir. Hesaplama sürelerini azaltmak amacıyla veri boyutunu küçültülür ve bunun için temel bileşen analizi kullanılır.
+
+• Makine Öğrenmesinde Kullanımı:
+Veri Bilimi çalışmalarında çok sayıda değişken ile çalışılması gerekebilir.Bu durum eğitim(training) süresinin fazla olması, aşırı öğrenme(overlifting) ve çoklu doğrusal bağlantı(multicollinearity) gibi sorunları beraberinde getirir.Hazırlanan modellerin optimum sürede ve performansla çalışması gerekecektir.
+Bu problemleri aşmak için değişken seçimi ve boyut indirgeme yöntemleri kullanılabilir. Değişken seçiminde veri setindeki değişken korunur ya da tamamen kaldırılır. Boyut indirgemede ise mevcut değişkenlerin kombinasyonlarından oluşan yeni değişkenler yaratılarak değişken sayısı azaltılır. Böylece veri setindeki tüm özellikler hala mevcut ancak değişken sayısı azaltılmış olur.
+Analizlerde yaşanan bu tip sorunları aşmak için en çok tercih edilen boyut indirgeme yöntemlerinden  birisi de Temel Bileşenler Analizidir.
+Ayrıca Temel Bileşenler Analizi, yüz tanıma, resim sıkıştırma ve örüntü tanıma gibi alanlarda yaygın olarak kullanılmaktadır.
+         ![image](https://user-images.githubusercontent.com/75726215/208492447-391ec063-983f-46c4-9de4-105d442f0d89.png)
 
 
-
-
-
-                                
+          
+          
+          
+          
+          
+          
+          
 ## Kaynakça:
 
 https://www.cs.toronto.edu/~rgrosse/courses/csc411_f18/slides/lec12-slides.pdf
