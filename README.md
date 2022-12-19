@@ -26,7 +26,7 @@ Daha spesifik olarak, PCA'dan önce standardizasyon gerçekleştirmenin kritik o
 
 Matematiksel olarak bu, ortalamayı çıkararak ve her değişkenin her değeri için standart sapmaya bölerek yapılabilir. 
                                   
-                                  ![image](https://user-images.githubusercontent.com/75726215/208484034-61b817ce-7a15-4438-bebb-df03f29aaad1.png)
+  ![image](https://user-images.githubusercontent.com/75726215/208484034-61b817ce-7a15-4438-bebb-df03f29aaad1.png)
 
                                   
 Standardizasyon yapıldıktan sonra, tüm değişkenler aynı ölçeğe dönüştürülecektir. 
@@ -37,7 +37,7 @@ Bu adımın amacı, girdi veri setindeki değişkenlerin birbirlerine göre orta
 
 Kovaryans matrisi, başlangıç değişkenlerinin tüm olası çiftleriyle ilişkili kovaryansları girdi olarak içeren bir p × p simetrik matristir (burada p, boyutların sayısıdır). Örneğin, x, y ve z 3 değişkenli 3 boyutlu bir veri kümesi için kovaryans matrisi, bunun 3×3 matrisidir: 
 
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484138-a0c9099c-1b48-479d-b85e-de765c45ae86.png)
+  ![image](https://user-images.githubusercontent.com/75726215/208484138-a0c9099c-1b48-479d-b85e-de765c45ae86.png)
 
                                 
 Bir değişkenin kendisi ile kovaryansı onun varyansı olduğundan (Cov(a,a)=Var(a)) ana köşegende (Sol üstten sağ alta) aslında her bir ilk değişkenin varyansına sahibiz. Ve kovaryans değişmeli olduğundan (Cov(a,b)=Cov(b,a)) kovaryans matrisinin girişleri ana köşegene göre simetriktir, yani üst ve alt üçgen kısımlar eşittir. 
@@ -54,7 +54,7 @@ Artık kovaryans matrisinin olası tüm değişken çiftleri arasındaki korelas
 Özvektörler ve özdeğerler, verilerin temel bileşenlerini belirlemek için kovaryans matrisinden hesaplamamız gereken lineer cebir kavramlarıdır. Bu kavramların açıklamasına geçmeden önce temel bileşenlerden ne anladığımızı anlayalım. 
 Temel bileşenler, başlangıç değişkenlerinin doğrusal kombinasyonları veya karışımları olarak oluşturulan yeni değişkenlerdir. Bu kombinasyonlar, yeni değişkenler (yani temel bileşenler) ilintisiz olacak ve ilk değişkenlerdeki bilgilerin çoğu ilk bileşenlere sıkıştırılacak veya sıkıştırılacak şekilde yapılır. Yani, fikir şu ki, 10 boyutlu veriler size 10 ana bileşen verir, ancak PCA mümkün olan maksimum bilgiyi ilk bileşene, ardından ikinci bileşene maksimum kalan bilgiyi vb. 
 
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484292-cc1fa7f5-4ce2-4c61-a4c9-e530f39a6157.png)
+   ![image](https://user-images.githubusercontent.com/75726215/208484292-cc1fa7f5-4ce2-4c61-a4c9-e530f39a6157.png)
 
                                  
 Bilgileri temel bileşenlerde bu şekilde düzenlemek, çok fazla bilgi kaybetmeden boyutsallığı azaltmanıza olanak tanır ve bu, düşük bilgi içeren bileşenleri atarak ve kalan bileşenleri yeni değişkenleriniz olarak kabul ederek.
@@ -68,7 +68,7 @@ Temel bileşenlere sahip olduktan sonra, her bileşenin açıkladığı varyans 
   # PCA Temel Bileşenleri Nasıl Oluşturulur?
 Veride değişken sayısı kadar temel bileşen olduğu için, temel bileşenler, ilk temel bileşen veri kümesindeki olası en büyük varyansı açıklayacak şekilde oluşturulur. Örneğin veri kümemizin dağılım grafiği aşağıdaki gibi olsun, ilk ana bileşeni tahmin edebilir miyiz? Evet, orijinden geçtiği için yaklaşık olarak mor işaretlerle eşleşen çizgidir ve noktaların izdüşümünün (kırmızı noktalar) en fazla yayıldığı çizgidir. Veya matematiksel olarak konuşursak, varyansı en üst düzeye çıkaran çizgidir (yansıtılan noktalardan (kırmızı noktalar) orijine olan mesafelerin karesinin ortalaması).
                           
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484370-36fb5812-506a-49cb-a428-683b57585d56.png)
+   ![image](https://user-images.githubusercontent.com/75726215/208484370-36fb5812-506a-49cb-a428-683b57585d56.png)
 
 İkinci temel bileşen, birinci temel bileşenle ilişkisiz olması (yani ona dik olması) ve bir sonraki en yüksek varyansı açıklaması koşuluyla aynı şekilde hesaplanır.
 
@@ -83,7 +83,7 @@ Daha fazla uzatmadan, yukarıda açıklanan tüm sihrin arkasında özvektörler
    # Örnek:
 Veri setimizin x,y 2 değişkenli 2 boyutlu olduğunu ve kovaryans matrisinin özvektörlerinin ve özdeğerlerinin aşağıdaki gibi olduğunu varsayalım:
 
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484461-6f604122-c400-4b3b-bbb0-67658d2a6871.png)
+   ![image](https://user-images.githubusercontent.com/75726215/208484461-6f604122-c400-4b3b-bbb0-67658d2a6871.png)
 
 
 Özdeğerleri azalan düzende sıralarsak λ1>λ2 elde ederiz, bu da birinci ana bileşene (PC1) karşılık gelen özvektörün v1 ve ikinci bileşene (PC2) karşılık gelen özvektörün v2 olduğu anlamına gelir.
@@ -101,12 +101,12 @@ Aradığınız şeye bağlı olarak tüm bileşenleri saklamayı veya daha az ö
   # Örnek:
 Önceki adımdaki örneğe devam ederek, v1 ve v2 özvektörlerinin her ikisi ile bir özellik vektörü oluşturabiliriz:
       
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484531-d4ca6808-4de5-415b-8739-1abec9ef1bce.png)
+   ![image](https://user-images.githubusercontent.com/75726215/208484531-d4ca6808-4de5-415b-8739-1abec9ef1bce.png)
 
                               
 Veya daha az öneme sahip olan v2 özvektörünü atın ve yalnızca v1 ile bir özellik vektörü oluşturun:
 
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484591-ced65069-9fc4-4203-a5cb-32f91c891df5.png)
+   ![image](https://user-images.githubusercontent.com/75726215/208484591-ced65069-9fc4-4203-a5cb-32f91c891df5.png)
 
 
 Özvektör v2'nin atılması, boyutsallığı 1 azaltacak ve sonuç olarak nihai veri setinde bilgi kaybına neden olacaktır. Ancak v2'nin bilgilerin yalnızca %4'ünü taşıdığı göz önüne alındığında, kayıp bu nedenle önemli olmayacak ve v1 tarafından taşınan bilgilerin %96'sına sahip olacağız.
@@ -119,7 +119,7 @@ Bu nedenle, örnekte gördüğümüz gibi, aradığınız şeye bağlı olarak t
 
 Son adım olan bu adımda amaç, kovaryans matrisinin özvektörleri kullanılarak oluşturulan özellik vektörünü kullanmak, verileri orijinal eksenlerden temel bileşenler tarafından temsil edilenlere yeniden yönlendirmek (bu nedenle Temel Bileşenler Analizi adıdır). ). Bu, orijinal veri setinin devriğini özellik vektörünün devriğiyle çarparak yapılabilir. 
 
-                                 ![image](https://user-images.githubusercontent.com/75726215/208484659-d632deb5-9c8e-4e48-8a52-cea564e9a6b7.png)
+   ![image](https://user-images.githubusercontent.com/75726215/208484659-d632deb5-9c8e-4e48-8a52-cea564e9a6b7.png)
 
 
 
