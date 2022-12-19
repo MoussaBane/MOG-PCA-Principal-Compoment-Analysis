@@ -144,7 +144,9 @@ NOT: Analizlerimizin sonucunda değişkenlerimizi de belirterek rapor yazmamız 
 ## Kaynakça:
 
 https://www.cs.toronto.edu/~rgrosse/courses/csc411_f18/slides/lec12-slides.pdf
+
 https://www.cs.cmu.edu/~mgormley/courses/10701-f16/slides/lecture14-pca.pdf
+
 [Lindsay I. Smith]: A tutorial on Principal Component Analysis
 
 
