@@ -1,4 +1,4 @@
-# Makine Öğrenmesine Giriş Dersinin PCA(Principal Component Analysis) Konu Sunumu
+# -------------------------Makine Öğrenmesine Giriş Dersinin PCA(Principal Component Analysis) Konu Sunum Raporu-------------------------
 
 ## PCA Nedir?
 
