@@ -176,6 +176,40 @@ X merkezli veri matrisinin Tekil Değer Ayrıştırması.
 
 • VT Sütunları:
   – Örnekleri yeniden oluşturmak için katsayılar
+  
+## Kaçan Principal Component(PC):
+Tüm ana bileşenleri seçmediğimiz için, kaçınılmaz olarak bazı bilgileri kaybediyoruz. Ancak neyi kaybettiğimizi tam olarak tarif etmedik. Yeni bir oyuncak örneğiyle daha derine inelim.
+                      
+   ![image](https://user-images.githubusercontent.com/75726215/209673055-2c94c3e7-fe21-4039-aabd-0260ae69e4d5.png)
+
+Verilerimizi PCA modeli aracılığıyla beslersek, Birinci Ana Bileşeni ve ardından İkinci Ana Bileşeni çizmekle başlar. Orijinal verimizi 2 boyuttan 2 boyuta dönüştürdüğümüzde yön dışında her şey aynı kalıyor. Maksimum varyansın PC1'de olması için verilerimizi döndürdük. Burada yeni bir şey yok.
+
+   ![image](https://user-images.githubusercontent.com/75726215/209673230-a198adb0-da38-422d-b503-584cdd5f93fb.png)
+
+Ancak, yalnızca Birinci Ana Bileşeni tutmaya karar verdiğimizi varsayalım, artık y eksenine sahip olmadığımız için tüm veri noktalarımızı Birinci Ana Bileşene yansıtmamız gerekir.
+
+   ![image](https://user-images.githubusercontent.com/75726215/209673373-86c47c7c-a75f-4a91-9271-2d302666fd5d.png)
+
+Kaybedeceğimiz şey, aşağıda kırmızı renkli çizgi ile vurgulanan İkinci Temel Bileşendeki mesafedir.
+
+   ![image](https://user-images.githubusercontent.com/75726215/209673518-a4ceb80f-60fe-483c-87ad-e4c0fa676add.png)
+
+Bunun, her bir veri noktasının algılanan mesafesi üzerinde etkileri vardır. İki belirli nokta (a.k.a ikili mesafe) arasındaki Öklid mesafesine bakarsak, bazı noktaların orijinal verilerde dönüştürülen verilerden çok daha uzak olduğunu fark edeceksiniz.
+
+   ![image](https://user-images.githubusercontent.com/75726215/209673609-35717a42-c14a-4a6e-a609-3212c4d370f8.png)
+
+PCA doğrusal bir dönüşümdür, bu nedenle kendi başına mesafeleri değiştirmez, ancak boyutları kaldırmaya başladığımızda mesafeler bozulur.
+Daha da zorlaşıyor - tüm ikili mesafeler eşit şekilde etkilenmez.
+En uzak iki noktayı alırsak, asal eksenlere neredeyse paralel olduklarını göreceksiniz. Öklid mesafeleri hala bozuk olsa da, çok daha az derecededir.
+
+   ![image](https://user-images.githubusercontent.com/75726215/209673842-0e2be2c4-47a2-4f9b-8520-339e57cc0239.png)
+
+Bunun nedeni, temel bileşen eksenlerinin en büyük varyansa sahip olduğumuz yönde çizilmesidir. Tanım olarak, veri noktaları birbirinden uzaklaştıkça varyans artar. Dolayısıyla doğal olarak birbirinden en uzak noktalar asal eksenlerle daha iyi hizalanır.
+Özetlemek gerekirse, boyutları PCA ile küçültmek, verilerimizin mesafelerini değiştirir. Bunu, büyük ikili mesafeyi küçük ikili mesafeden daha iyi koruyacak şekilde yapar.
+Bu, boyutları PCA ile küçültmenin birkaç dezavantajından biridir ve özellikle Öklid mesafe tabanlı algoritma ile çalışırken bunun farkında olmamız gerekir.
+Bazen, algoritmanızı bunun yerine orijinal veriler üzerinde çalıştırmak daha faydalı olabilir. Veri Bilimcisi olarak sizin, verilerinize ve kullanım durumunuza göre karar vermeniz gereken yer burasıdır.
+Sonuçta, veri bilimi bilim olduğu kadar sanattır.
+
 
 ## PCA Kullanım Alanları:
 
