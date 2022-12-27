@@ -8,6 +8,29 @@ Bir veri setinin değişken sayısını azaltmak, doğal olarak doğruluk pahas�
 
 Sonuç olarak, özetlemek gerekirse, PCA fikri basittir - mümkün olduğu kadar çok bilgiyi korurken bir veri kümesindeki değişken sayısını azaltmadır.
 
+##  Kullanılacak Terimler:
+
+   # Dimensionality (Boyutluluk):
+   
+   Bir veri kümesindeki rasgele değişkenlerin sayısı veya yalnızca özelliklerin sayısı veya daha basit bir şekilde veri kümenizde bulunan sütunların sayısıdır.    
+   
+   # Correlation (korelasyon):
+   
+   İki değişkenin birbiriyle ne kadar güçlü bir şekilde ilişkili olduğunu gösterir. Aynı aralıkların değeri -1 ile +1 arasındadır. Pozitif, değişkenlerden biri            arttığında diğerinin de arttığını, negatif ise diğerinin artarken azaldığını gösterir. Ve modül değeri, ilişkinin gücünü gösterir.
+
+   # Orthogonal (Dikey):
+   
+   Birbiriyle ilişkisiz, yani herhangi bir değişken çifti arasındaki korelasyon 0'dır.
+   
+   # Eigenvectors(Özvektörler):
+   
+   Özvektörler ve Özdeğerler kendi içinde büyük bir alandır, hadi kendimizi burada ihtiyaç duyacağımız bilgiyle sınırlayalım. Yani, sıfır olmayan bir v vektörü            düşünün. Av, v'nin bir skaler katıysa, bu bir kare matris A'nın özvektörüdür. Veya basitçe: Av = ƛv .
+   
+   Burada v özvektördür ve ƛ onunla ilişkili özdeğerdir.
+   
+   # Covariance Matrix(Kovaryans matrisi):
+   
+   Bu matris, değişken çiftleri arasındaki kovaryanslardan oluşur. (i,j)th elemanı, i-th ve j-th değişkeni arasındaki kovaryanstır.
 ## PCA Nasıl Çalışır ?
 
 Temel bileşen analizi beş adımda gerçekleştirilebilir. PCA'nın ne yaptığına dair mantıklı açıklamalar sunarak ve bunların nasıl hesaplanacağına odaklanmadan standardizasyon, kovaryans, özvektörler ve özdeğerler gibi matematiksel kavramları basitleştirerek her adımı gözden geçireceğim.
@@ -242,9 +265,16 @@ Analizlerde yaşanan bu tip sorunları aşmak için en çok tercih edilen boyut 
 Ayrıca Temel Bileşenler Analizi, yüz tanıma, resim sıkıştırma ve örüntü tanıma gibi alanlarda yaygın olarak kullanılmaktadır.
 
    ![image](https://user-images.githubusercontent.com/75726215/208492447-391ec063-983f-46c4-9de4-105d442f0d89.png)
+   
+• Görüntüler için PCA:  
 
+Bir makinenin görüntüleri okuyabildiğini veya sayı kullanmadan sadece görüntüleri kullanarak bazı hesaplamalar yapabileceğini birçok kez merak ediyor olmalısınız. Şimdi bunun bir kısmını cevaplamaya çalışacağız. Basit olması için, tartışmamızı yalnızca kare resimlerle sınırlayacağız. NxN piksel boyutunda herhangi bir kare görüntü, her öğenin görüntünün yoğunluk değeri olduğu bir NxN matrisi olarak temsil edilebilir. (Görüntü, tek bir görüntü oluşturacak şekilde piksel sıralarının birbiri ardına yerleştirilmesiyle oluşturulmuştur.) Yani bir dizi görüntünüz varsa, bu matrislerden bir matris oluşturabiliriz, bir dizi pikseli bir vektör olarak kabul ederek, biz üzerinde temel bileşen analizine başlamaya hazırdır. Nasıl faydalıdır?
 
-          
+Bir önceki kümenin parçası olmayan, tanımanız için size bir görüntü verildiğini varsayalım. Makine, tanınacak görüntü ile temel bileşenlerin her biri arasındaki farkları kontrol eder. PCA uygulanırsa ve farklılıklar 'dönüştürülmüş' matristen alınırsa, sürecin iyi performans gösterdiği ortaya çıkar. Ayrıca, PCA'yı uygulamak, fazla bilgi kaybetmeden bazı bileşenleri dışarıda bırakma ve böylece sorunun karmaşıklığını azaltma özgürlüğü verir.
+
+Görüntü sıkıştırma için, daha az anlamlı özvektörleri çıkararak, aslında depolama için görüntünün boyutunu azaltabiliriz. Ancak, orijinal görüntünün çoğaltılmasından bahsetmek, bariz nedenlerden dolayı bazı bilgileri kaybedecektir.
+
+        
           
           
           
