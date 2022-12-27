@@ -204,10 +204,16 @@ En uzak iki noktayı alırsak, asal eksenlere neredeyse paralel olduklarını g�
 
    ![image](https://user-images.githubusercontent.com/75726215/209673842-0e2be2c4-47a2-4f9b-8520-339e57cc0239.png)
 
-Bunun nedeni, temel bileşen eksenlerinin en büyük varyansa sahip olduğumuz yönde çizilmesidir. Tanım olarak, veri noktaları birbirinden uzaklaştıkça varyans artar. Dolayısıyla doğal olarak birbirinden en uzak noktalar asal eksenlerle daha iyi hizalanır.
+Bunun nedeni, temel bileşen eksenlerinin en büyük varyansa sahip olduğumuz yönde çizilmesidir. Tanım olarak, veri noktaları birbirinden uzaklaştıkça varyans artar.
+
+Dolayısıyla doğal olarak birbirinden en uzak noktalar asal eksenlerle daha iyi hizalanır.
+
 Özetlemek gerekirse, boyutları PCA ile küçültmek, verilerimizin mesafelerini değiştirir. Bunu, büyük ikili mesafeyi küçük ikili mesafeden daha iyi koruyacak şekilde yapar.
+
 Bu, boyutları PCA ile küçültmenin birkaç dezavantajından biridir ve özellikle Öklid mesafe tabanlı algoritma ile çalışırken bunun farkında olmamız gerekir.
+
 Bazen, algoritmanızı bunun yerine orijinal veriler üzerinde çalıştırmak daha faydalı olabilir. Veri Bilimcisi olarak sizin, verilerinize ve kullanım durumunuza göre karar vermeniz gereken yer burasıdır.
+
 Sonuçta, veri bilimi bilim olduğu kadar sanattır.
 
 
@@ -229,7 +235,9 @@ Günümüzde fosil yakıtlar nedeniyle   artan küresel ısınma sorununa karş�
 • Makine Öğrenmesinde Kullanımı:
 
 Veri Bilimi çalışmalarında çok sayıda değişken ile çalışılması gerekebilir.Bu durum eğitim(training) süresinin fazla olması, aşırı öğrenme(overlifting) ve çoklu doğrusal bağlantı(multicollinearity) gibi sorunları beraberinde getirir.Hazırlanan modellerin optimum sürede ve performansla çalışması gerekecektir.
+
 Bu problemleri aşmak için değişken seçimi ve boyut indirgeme yöntemleri kullanılabilir. Değişken seçiminde veri setindeki değişken korunur ya da tamamen kaldırılır. Boyut indirgemede ise mevcut değişkenlerin kombinasyonlarından oluşan yeni değişkenler yaratılarak değişken sayısı azaltılır. Böylece veri setindeki tüm özellikler hala mevcut ancak değişken sayısı azaltılmış olur.
+
 Analizlerde yaşanan bu tip sorunları aşmak için en çok tercih edilen boyut indirgeme yöntemlerinden  birisi de Temel Bileşenler Analizidir.
 Ayrıca Temel Bileşenler Analizi, yüz tanıma, resim sıkıştırma ve örüntü tanıma gibi alanlarda yaygın olarak kullanılmaktadır.
 
