@@ -261,6 +261,8 @@ https://www.youtube.com/watch?v=FD4DeN81ODY
 
 https://www.sartorius.com/en/knowledge/science-snippets/what-is-principal-component-analysis-pca-and-how-it-is-used-507186#:~:text=Principal%20component%20analysis%2C%20or%20PCA,more%20easily%20visualized%20and%20analyzed.
 
+https://www.projectpro.io/data-science-in-python-tutorial/principal-component-analysis-tutorial#:~:text=PCA%20is%20predominantly%20used%20as,%2C%20bioinformatics%2C%20psychology%2C%20etc.
+
 
 
 
