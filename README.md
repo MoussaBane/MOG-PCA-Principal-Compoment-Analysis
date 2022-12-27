@@ -188,16 +188,16 @@ X merkezli veri matrisinin Tekil Değer Ayrıştırması.
   
   ![image](https://user-images.githubusercontent.com/75726215/208490154-f41fb3a1-aace-4204-ab52-d728e990e9ee.png)
 
-• U Sütunları:
+# • U Sütunları:
   – Ana vektörler, { u(1) , …, u(k) }
   – Ortogonal ve birim norma sahip – yani UTU = I
   – Doğrusal kombinasyonlar kullanarak verileri yeniden oluşturabilir { u(1) , …, u(k) }
 
-• Matris S:
+# • Matris S:
   – Çapraz
   – Her bir özvektörün önemini gösterir
 
-• VT Sütunları:
+# • VT Sütunları:
   – Örnekleri yeniden oluşturmak için katsayılar
   
 ## Kaçan Principal Component(PC):
@@ -242,20 +242,20 @@ Sonuçta, veri bilimi bilim olduğu kadar sanattır.
 
 ## PCA Kullanım Alanları:
 
-• GENETİK:
+# • GENETİK:
 
 Genetik çeşitliliğin coğrafi konum ve etnik kökene göre dağılımı,bir ırkın yaşadığı tarihsel demografik olaylar ve süreçler hakkında geniş bir bilgi kaynağı sağlar.Bununla birlikte kolonizasyon, izolasyon, göç ve karışım gibi süreçlerin doğası ve zamanlaması hakkında çıkarımlar yapmak çok zorlaşabilir. Temel Bileşen Analizi de genetik varyasyonun coğrafi konum ve etnik kökene dağılımındaki yapıyı belirlemek için yaygın olarak kullanılır. 
           
-• SAĞLIK:
+# • SAĞLIK:
 
 Elektronik Sağlık Hizmeti kayıtları kullanan klinik araştırmalar genellikle çok sayıda değişken sunar. Bu değişkenler sıklıkla birbirleriyle ilişkilidir ve bu da  regresyon modellerinde çoklu bağlantıya neden olur. Çoklu bağlantıdan etkilenen  tahminlerin büyük standart hataları olabilir ve bu tür tahminler üzerindeki çıkarımı daha az kesin hale getirir.
 Bu tip bir sorun klinik çalışmalarda mevcuttur ve bu sorunla başa çıkmak için kullanılan yöntemlerden bir tanesi de Temel Bileşen Analizidir.   
 
-• ENERJİ:
+# • ENERJİ:
 
 Günümüzde fosil yakıtlar nedeniyle   artan küresel ısınma sorununa karşılık güneş enerjisi benzeri yenilenebilir enerjilere  yönelim artmaktadır. Ancak güneş enerjisi sistemlerinin sorunsuz  ve de sürekli çalışabilmesi için güneş ışınımının yoğunluğu ile ilgili birkaç dakika önceden bilgi alınmalıdır. Bunun için çeşitli modeller olsa da bu modeller çoğunlukla yüksek hesaplama süresi gerektirir. Hesaplama sürelerini azaltmak amacıyla veri boyutunu küçültülür ve bunun için temel bileşen analizi kullanılır.
 
-• Makine Öğrenmesinde Kullanımı:
+# • Makine Öğrenmesinde Kullanımı:
 
 Veri Bilimi çalışmalarında çok sayıda değişken ile çalışılması gerekebilir.Bu durum eğitim(training) süresinin fazla olması, aşırı öğrenme(overlifting) ve çoklu doğrusal bağlantı(multicollinearity) gibi sorunları beraberinde getirir.Hazırlanan modellerin optimum sürede ve performansla çalışması gerekecektir.
 
@@ -266,7 +266,7 @@ Ayrıca Temel Bileşenler Analizi, yüz tanıma, resim sıkıştırma ve örünt
 
    ![image](https://user-images.githubusercontent.com/75726215/208492447-391ec063-983f-46c4-9de4-105d442f0d89.png)
    
-• Görüntüler için PCA:  
+# • Görüntüler için PCA:  
 
 Bir makinenin görüntüleri okuyabildiğini veya sayı kullanmadan sadece görüntüleri kullanarak bazı hesaplamalar yapabileceğini birçok kez merak ediyor olmalısınız. Şimdi bunun bir kısmını cevaplamaya çalışacağız. Basit olması için, tartışmamızı yalnızca kare resimlerle sınırlayacağız. NxN piksel boyutunda herhangi bir kare görüntü, her öğenin görüntünün yoğunluk değeri olduğu bir NxN matrisi olarak temsil edilebilir. (Görüntü, tek bir görüntü oluşturacak şekilde piksel sıralarının birbiri ardına yerleştirilmesiyle oluşturulmuştur.) Yani bir dizi görüntünüz varsa, bu matrislerden bir matris oluşturabiliriz, bir dizi pikseli bir vektör olarak kabul ederek, biz üzerinde temel bileşen analizine başlamaya hazırdır. Nasıl faydalıdır?
 
