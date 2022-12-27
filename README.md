@@ -257,7 +257,10 @@ https://www.cs.toronto.edu/~rgrosse/courses/csc411_f18/slides/lec12-slides.pdf
 
 https://www.cs.cmu.edu/~mgormley/courses/10701-f16/slides/lecture14-pca.pdf
 
-[Lindsay I. Smith]: A tutorial on Principal Component Analysis
+https://www.youtube.com/watch?v=FD4DeN81ODY
+
+https://www.sartorius.com/en/knowledge/science-snippets/what-is-principal-component-analysis-pca-and-how-it-is-used-507186#:~:text=Principal%20component%20analysis%2C%20or%20PCA,more%20easily%20visualized%20and%20analyzed.
+
 
 
 
