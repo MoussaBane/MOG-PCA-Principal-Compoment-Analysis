@@ -10,25 +10,25 @@ Sonuç olarak, özetlemek gerekirse, PCA fikri basittir - mümkün olduğu kadar
 
 ##  Kullanılacak Terimler:
 
-   # Dimensionality (Boyutluluk):
+   ### Dimensionality (Boyutluluk):
    
    Bir veri kümesindeki rasgele değişkenlerin sayısı veya yalnızca özelliklerin sayısı veya daha basit bir şekilde veri kümenizde bulunan sütunların sayısıdır.    
    
-   # Correlation (korelasyon):
+   ### Correlation (korelasyon):
    
    İki değişkenin birbiriyle ne kadar güçlü bir şekilde ilişkili olduğunu gösterir. Aynı aralıkların değeri -1 ile +1 arasındadır. Pozitif, değişkenlerden biri            arttığında diğerinin de arttığını, negatif ise diğerinin artarken azaldığını gösterir. Ve modül değeri, ilişkinin gücünü gösterir.
 
-   # Orthogonal (Dikey):
+   ### Orthogonal (Dikey):
    
    Birbiriyle ilişkisiz, yani herhangi bir değişken çifti arasındaki korelasyon 0'dır.
    
-   # Eigenvectors(Özvektörler):
+   ### Eigenvectors(Özvektörler):
    
    Özvektörler ve Özdeğerler kendi içinde büyük bir alandır, hadi kendimizi burada ihtiyaç duyacağımız bilgiyle sınırlayalım. Yani, sıfır olmayan bir v vektörü            düşünün. Av, v'nin bir skaler katıysa, bu bir kare matris A'nın özvektörüdür. Veya basitçe: Av = ƛv .
    
    Burada v özvektördür ve ƛ onunla ilişkili özdeğerdir.
    
-   # Covariance Matrix(Kovaryans matrisi):
+   ### Covariance Matrix(Kovaryans matrisi):
    
    Bu matris, değişken çiftleri arasındaki kovaryanslardan oluşur. (i,j)th elemanı, i-th ve j-th değişkeni arasındaki kovaryanstır.
 ## PCA Nasıl Çalışır ?
@@ -88,7 +88,7 @@ Geometrik olarak konuşursak, ana bileşenler, verilerin maksimum miktarda varya
 
 Temel bileşenlere sahip olduktan sonra, her bileşenin açıkladığı varyans (bilgi) yüzdesini hesaplamak için her bileşenin özdeğerini özdeğerlerin toplamına böleriz. 
 
-  # PCA Temel Bileşenleri Nasıl Oluşturulur?
+  #### PCA Temel Bileşenleri Nasıl Oluşturulur?
 Veride değişken sayısı kadar temel bileşen olduğu için, temel bileşenler, ilk temel bileşen veri kümesindeki olası en büyük varyansı açıklayacak şekilde oluşturulur. Örneğin veri kümemizin dağılım grafiği aşağıdaki gibi olsun, ilk ana bileşeni tahmin edebilir miyiz? Evet, orijinden geçtiği için yaklaşık olarak mor işaretlerle eşleşen çizgidir ve noktaların izdüşümünün (kırmızı noktalar) en fazla yayıldığı çizgidir. Veya matematiksel olarak konuşursak, varyansı en üst düzeye çıkaran çizgidir (yansıtılan noktalardan (kırmızı noktalar) orijine olan mesafelerin karesinin ortalaması).
                           
    ![image](https://user-images.githubusercontent.com/75726215/208484370-36fb5812-506a-49cb-a428-683b57585d56.png)
@@ -103,7 +103,7 @@ Daha fazla uzatmadan, yukarıda açıklanan tüm sihrin arkasında özvektörler
 
 Özvektörlerinizi özdeğerlerine göre en yüksekten en düşüğe doğru sıralayarak, temel bileşenleri önem sırasına göre elde edersiniz.
 
-   # Örnek:
+   #### Örnek:
 Veri setimizin x,y 2 değişkenli 2 boyutlu olduğunu ve kovaryans matrisinin özvektörlerinin ve özdeğerlerinin aşağıdaki gibi olduğunu varsayalım:
 
    ![image](https://user-images.githubusercontent.com/75726215/208484461-6f604122-c400-4b3b-bbb0-67658d2a6871.png)
@@ -121,7 +121,7 @@ Dolayısıyla, özellik vektörü, tutmaya karar verdiğimiz bileşenlerin özve
 
 Aradığınız şeye bağlı olarak tüm bileşenleri saklamayı veya daha az önemli olanları atmayı seçmek size kalmış. Çünkü, verilerinizi boyutsallığı azaltmaya çalışmadan ilişkisiz yeni değişkenler (temel bileşenler) açısından tanımlamak istiyorsanız, daha az önemli bileşenleri dışarıda bırakmanıza gerek yoktur.
 
-  # Örnek:
+  #### Örnek:
 Önceki adımdaki örneğe devam ederek, v1 ve v2 özvektörlerinin her ikisi ile bir özellik vektörü oluşturabiliriz:
       
    ![image](https://user-images.githubusercontent.com/75726215/208484531-d4ca6808-4de5-415b-8739-1abec9ef1bce.png)
@@ -161,7 +161,7 @@ NOT: Analizlerimizin sonucunda değişkenlerimizi de belirterek rapor yazmamız 
 
 ## PCA	ALGORITMALARI:
 
-### PCA algoritması I (sıralı):
+#### PCA algoritması I (sıralı):
 
 Merkezlenmiş veriler göz önüne alındığında {x1, …, xm}, ana vektörleri hesaplama:
       ![image](https://user-images.githubusercontent.com/75726215/208487474-0b0339d2-9342-4474-b35e-d4cef9067a4e.png)
@@ -173,14 +173,14 @@ x'in izdüşümünün varyansını maksimize ediyoruz.
 #### Varyansı Maksimize Etme:
    ![image](https://user-images.githubusercontent.com/75726215/208488275-29baeea9-e6a8-437a-bdc6-b3ff2f383742.png)
 
-### PCA algoritması II (örnek kovaryans matrisi):
+#### PCA algoritması II (örnek kovaryans matrisi):
 
 Verilen veri {x1, …, xm}, kovaryans matrisı hesaplama:
    ![image](https://user-images.githubusercontent.com/75726215/208489217-576258c9-6ae4-4c8e-ae78-91a88053a0f7.png)
 
    ![image](https://user-images.githubusercontent.com/75726215/208489382-10c9220f-e284-4364-ad08-48f07e51a683.png)
 
-### PCA algoritması III (veri matrisinin SVD'si):
+#### PCA algoritması III (veri matrisinin SVD'si):
 
 X merkezli veri matrisinin Tekil Değer Ayrıştırması.
   
@@ -188,16 +188,16 @@ X merkezli veri matrisinin Tekil Değer Ayrıştırması.
   
   ![image](https://user-images.githubusercontent.com/75726215/208490154-f41fb3a1-aace-4204-ab52-d728e990e9ee.png)
 
-# • U Sütunları:
+#### • U Sütunları:
   – Ana vektörler, { u(1) , …, u(k) }
   – Ortogonal ve birim norma sahip – yani UTU = I
   – Doğrusal kombinasyonlar kullanarak verileri yeniden oluşturabilir { u(1) , …, u(k) }
 
-# • Matris S:
+#### • Matris S:
   – Çapraz
   – Her bir özvektörün önemini gösterir
 
-# • VT Sütunları:
+#### • VT Sütunları:
   – Örnekleri yeniden oluşturmak için katsayılar
   
 ## Kaçan Principal Component(PC):
@@ -242,20 +242,20 @@ Sonuçta, veri bilimi bilim olduğu kadar sanattır.
 
 ## PCA Kullanım Alanları:
 
-# • GENETİK:
+### • GENETİK:
 
 Genetik çeşitliliğin coğrafi konum ve etnik kökene göre dağılımı,bir ırkın yaşadığı tarihsel demografik olaylar ve süreçler hakkında geniş bir bilgi kaynağı sağlar.Bununla birlikte kolonizasyon, izolasyon, göç ve karışım gibi süreçlerin doğası ve zamanlaması hakkında çıkarımlar yapmak çok zorlaşabilir. Temel Bileşen Analizi de genetik varyasyonun coğrafi konum ve etnik kökene dağılımındaki yapıyı belirlemek için yaygın olarak kullanılır. 
           
-# • SAĞLIK:
+### • SAĞLIK:
 
 Elektronik Sağlık Hizmeti kayıtları kullanan klinik araştırmalar genellikle çok sayıda değişken sunar. Bu değişkenler sıklıkla birbirleriyle ilişkilidir ve bu da  regresyon modellerinde çoklu bağlantıya neden olur. Çoklu bağlantıdan etkilenen  tahminlerin büyük standart hataları olabilir ve bu tür tahminler üzerindeki çıkarımı daha az kesin hale getirir.
 Bu tip bir sorun klinik çalışmalarda mevcuttur ve bu sorunla başa çıkmak için kullanılan yöntemlerden bir tanesi de Temel Bileşen Analizidir.   
 
-# • ENERJİ:
+### • ENERJİ:
 
 Günümüzde fosil yakıtlar nedeniyle   artan küresel ısınma sorununa karşılık güneş enerjisi benzeri yenilenebilir enerjilere  yönelim artmaktadır. Ancak güneş enerjisi sistemlerinin sorunsuz  ve de sürekli çalışabilmesi için güneş ışınımının yoğunluğu ile ilgili birkaç dakika önceden bilgi alınmalıdır. Bunun için çeşitli modeller olsa da bu modeller çoğunlukla yüksek hesaplama süresi gerektirir. Hesaplama sürelerini azaltmak amacıyla veri boyutunu küçültülür ve bunun için temel bileşen analizi kullanılır.
 
-# • Makine Öğrenmesinde Kullanımı:
+### • Makine Öğrenmesinde Kullanımı:
 
 Veri Bilimi çalışmalarında çok sayıda değişken ile çalışılması gerekebilir.Bu durum eğitim(training) süresinin fazla olması, aşırı öğrenme(overlifting) ve çoklu doğrusal bağlantı(multicollinearity) gibi sorunları beraberinde getirir.Hazırlanan modellerin optimum sürede ve performansla çalışması gerekecektir.
 
@@ -266,7 +266,7 @@ Ayrıca Temel Bileşenler Analizi, yüz tanıma, resim sıkıştırma ve örünt
 
    ![image](https://user-images.githubusercontent.com/75726215/208492447-391ec063-983f-46c4-9de4-105d442f0d89.png)
    
-# • Görüntüler için PCA:  
+### • Görüntüler için PCA:  
 
 Bir makinenin görüntüleri okuyabildiğini veya sayı kullanmadan sadece görüntüleri kullanarak bazı hesaplamalar yapabileceğini birçok kez merak ediyor olmalısınız. Şimdi bunun bir kısmını cevaplamaya çalışacağız. Basit olması için, tartışmamızı yalnızca kare resimlerle sınırlayacağız. NxN piksel boyutunda herhangi bir kare görüntü, her öğenin görüntünün yoğunluk değeri olduğu bir NxN matrisi olarak temsil edilebilir. (Görüntü, tek bir görüntü oluşturacak şekilde piksel sıralarının birbiri ardına yerleştirilmesiyle oluşturulmuştur.) Yani bir dizi görüntünüz varsa, bu matrislerden bir matris oluşturabiliriz, bir dizi pikseli bir vektör olarak kabul ederek, biz üzerinde temel bileşen analizine başlamaya hazırdır. Nasıl faydalıdır?
 
